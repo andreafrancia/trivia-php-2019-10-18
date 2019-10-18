@@ -3,7 +3,8 @@ function echoln($string) {
   echo $string."\n";
 }
 
-class Game {
+class Game
+{
     private $players;
     private $places;
     private $purses ;
@@ -19,7 +20,7 @@ class Game {
 
     function  __construct(){
 
-   	$this->players = array();
+   	    $this->players = array();
         $this->places = array(0);
         $this->purses  = array(0);
         $this->inPenaltyBox  = array(0);

@@ -158,7 +158,7 @@ class Game
 
         }
 
-        $this->print('Answer was corrent!!!!');
+        $this->print('Answer was correct!!!!');
         return $this->printCurrentStatus();
     }
 

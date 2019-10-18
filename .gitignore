@@ -1,0 +1,5 @@
+/vendor/
+/reference.txt
+/actual.txt
+/.idea/
+/.phpunit.result.cache

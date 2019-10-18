@@ -1,0 +1,12 @@
+{
+    "name": "andrea/triva-php-2019-10-19",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^8.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "\\": "src/"
+        }
+    }
+}

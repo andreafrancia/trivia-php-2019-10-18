@@ -144,16 +144,18 @@ class Game {
             if ($this->isGettingOutOfPenaltyBox) {
                 echoln('Answer was correct!!!!');
                 return $this->printCurrentStatus();
-            } else {
-                $this->currentPlayer++;
-                if ($this->currentPlayer == count($this->players)) $this->currentPlayer = 0;
-                return true;
             }
+
+            $this->currentPlayer++;
+            if ($this->currentPlayer === count($this->players)) {
+                $this->currentPlayer = 0;
+            }
+            return true;
 
 
         } else {
 
-            echoln("Answer was corrent!!!!");
+            echoln('Answer was corrent!!!!');
             return $this->printCurrentStatus();
         }
     }

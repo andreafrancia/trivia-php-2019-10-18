@@ -24,9 +24,9 @@ class TriviaTest extends TestCase
     }
 
     function runManyTimes($path) {
-        srand(0);
         ob_start();
         for($i=0; $i < 50; $i++) {
+            srand($i);
             include __DIR__ . "/../GameRunner.php";
         }
         $output = ob_get_contents();

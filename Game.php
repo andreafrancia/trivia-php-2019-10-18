@@ -20,15 +20,15 @@ class Game
 
     function  __construct(){
 
-   	    $this->players = array();
+   	    $this->players = [];
         $this->places = array(0);
         $this->purses  = array(0);
         $this->inPenaltyBox  = array(0);
 
-        $this->popQuestions = array();
-        $this->scienceQuestions = array();
-        $this->sportsQuestions = array();
-        $this->rockQuestions = array();
+        $this->popQuestions = [];
+        $this->scienceQuestions = [];
+        $this->sportsQuestions = [];
+        $this->rockQuestions = [];
 
         for ($i = 0; $i < 50; $i++) {
 			array_push($this->popQuestions, "Pop Question " . $i);

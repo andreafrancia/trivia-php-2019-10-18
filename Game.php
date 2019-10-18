@@ -87,15 +87,20 @@ class Game
 
     }
 
-	function  askQuestion() {
-		if ($this->currentCategory() == "Pop")
-			echoln(array_shift($this->popQuestions));
-		if ($this->currentCategory() == "Science")
-			echoln(array_shift($this->scienceQuestions));
-		if ($this->currentCategory() == "Sports")
-			echoln(array_shift($this->sportsQuestions));
-		if ($this->currentCategory() == "Rock")
-			echoln(array_shift($this->rockQuestions));
+	public function askQuestion(): void
+    {
+		if ($this->currentCategory() === 'Pop') {
+            echoln(array_shift($this->popQuestions));
+        }
+		if ($this->currentCategory() === 'Science') {
+            echoln(array_shift($this->scienceQuestions));
+        }
+		if ($this->currentCategory() === 'Sports') {
+            echoln(array_shift($this->sportsQuestions));
+        }
+		if ($this->currentCategory() === 'Rock') {
+            echoln(array_shift($this->rockQuestions));
+        }
 	}
 
 

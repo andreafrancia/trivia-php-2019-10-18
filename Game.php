@@ -21,9 +21,9 @@ class Game
     function  __construct(){
 
    	    $this->players = [];
-        $this->places = array(0);
-        $this->purses  = array(0);
-        $this->inPenaltyBox  = array(0);
+        $this->places = [0];
+        $this->purses  = [0];
+        $this->inPenaltyBox  = [0];
 
         $this->popQuestions = [];
         $this->scienceQuestions = [];

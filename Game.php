@@ -38,7 +38,7 @@ class Game {
     }
 
 	function createRockQuestion($index){
-		return "Rock Question " . $index;
+		return "Rock" . " Question " . $index;
 	}
 
 	function isPlayable() {

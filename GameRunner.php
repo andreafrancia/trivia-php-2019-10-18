@@ -6,21 +6,14 @@ $notAWinner = false;
 
 $aGame = new Game();
 
-$aGame
-    ->add("Chet")
-    ->add("Pat")
-    ->add("Sue");
-
+$playersName = ['Chet', 'Pat', 'Sue'];
+foreach ($playersName as $playerName) {
+    $aGame->add($playerName);
+}
 
 do {
-
     $aGame->roll(rand(0, 5) + 1);
-
-    if (rand(0, 9) == 7) {
-        $notAWinner = $aGame->wrongAnswer();
-    } else {
-        $notAWinner = $aGame->wasCorrectlyAnswered();
-    }
-
-
+    $notAWinner = rand(0, 9) == 7
+        ? $aGame->wrongAnswer()
+        : $aGame->wasCorrectlyAnswered();
 } while ($notAWinner);

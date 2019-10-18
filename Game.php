@@ -153,11 +153,10 @@ class Game {
             return true;
 
 
-        } else {
-
-            echoln('Answer was corrent!!!!');
-            return $this->printCurrentStatus();
         }
+
+        echoln('Answer was corrent!!!!');
+        return $this->printCurrentStatus();
     }
 
     /**

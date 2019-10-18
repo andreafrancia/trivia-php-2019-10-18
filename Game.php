@@ -47,13 +47,14 @@ class Game {
 
 	public function add($playerName): Game
     {
-	   array_push($this->players, $playerName);
+	   $this->players[] = $playerName;
 	   $this->places[$this->howManyPlayers()] = 0;
 	   $this->purses[$this->howManyPlayers()] = 0;
 	   $this->inPenaltyBox[$this->howManyPlayers()] = false;
 
-	    echoln($playerName . " was added");
-	    echoln("They are player number " . count($this->players));
+	    echoln($playerName . ' was added');
+	    echoln('They are player number ' . count($this->players));
+	    
 		return $this;
 	}
 

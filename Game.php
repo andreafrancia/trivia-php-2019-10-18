@@ -145,7 +145,7 @@ class Game
     {
         if ($this->isInPenalty($this->currentPlayer)) {
             if ($this->isGettingOutOfPenaltyBox) {
-                $this->print('Answer was correct!!!!');
+                $this->print($this->getCorrectAnswer());
                 return $this->printCurrentStatus();
             }
 
@@ -158,7 +158,7 @@ class Game
 
         }
 
-        $this->print('Answer was correct!!!!');
+        $this->print($this->getCorrectAnswer());
         return $this->printCurrentStatus();
     }
 
@@ -234,5 +234,13 @@ class Game
     private function putInPenalty($player): void
     {
         $this->inPenaltyBox[$player] = true;
+    }
+
+    /**
+     * @return string
+     */
+    private function getCorrectAnswer(): string
+    {
+        return 'Answer was correct!!!!';
     }
 }

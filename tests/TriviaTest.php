@@ -1,6 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+
 define("ROOT", realpath(__DIR__ . "/.."));
 
 class TriviaTest extends TestCase
@@ -13,7 +14,8 @@ class TriviaTest extends TestCase
         }
     }
 
-    function test() {
+    public function test(): void
+    {
         $this->runManyTimes(pathTo("actual.txt"));
 
         $expected = file_get_contents(pathTo("reference.txt"));

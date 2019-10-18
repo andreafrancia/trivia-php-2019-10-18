@@ -37,7 +37,9 @@ class Game
             array_push($this->scienceQuestions, $this->createQuestion("Science", $i));
         }
         for ($i = 0; $i < 50; $i++) {
-			array_push($this->sportsQuestions, $this->createQuestion("Sports", $i));
+            array_push($this->sportsQuestions, $this->createQuestion("Sports", $i));
+        }
+        for ($i = 0; $i < 50; $i++) {
 			array_push($this->rockQuestions, $this->createQuestion("Rock", $i));
     	}
     }

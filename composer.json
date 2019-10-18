@@ -1,11 +1,17 @@
 {
   "name": "andrea/triva-php-2019-10-19",
   "type": "library",
+  "description": "a trivia",
   "require-dev": {
     "phpunit/phpunit": "^8.4"
   },
   "scripts": {
-    "commit": "vendor/bin/phpunit && git add --all && git commit -m \"pass\" && git push",
+    "commit": [
+      "phpunit",
+      "git add --all",
+      "git commit -m \"pass\"",
+      "git push"
+      ],
     "pull": "git pull --rebase && git push || git reset --hard origin/master"
   },
   "autoload": {

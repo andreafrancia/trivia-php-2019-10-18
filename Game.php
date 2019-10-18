@@ -45,7 +45,8 @@ class Game {
 		return ($this->howManyPlayers() >= 2);
 	}
 
-	function add($playerName) {
+	public function add($playerName): Game
+    {
 	   array_push($this->players, $playerName);
 	   $this->places[$this->howManyPlayers()] = 0;
 	   $this->purses[$this->howManyPlayers()] = 0;
@@ -56,7 +57,8 @@ class Game {
 		return $this;
 	}
 
-	function howManyPlayers() {
+	public function howManyPlayers(): int
+    {
 		return count($this->players);
 	}
 

@@ -34,11 +34,11 @@ class Game
 			array_push($this->popQuestions, "Pop Question " . $i);
 			array_push($this->scienceQuestions, ("Science Question " . $i));
 			array_push($this->sportsQuestions, ("Sports Question " . $i));
-			array_push($this->rockQuestions, $this->createRockQuestion($i));
+			array_push($this->rockQuestions, $this->createRockQuestion("Rock", $i));
     	}
     }
 
-	function createRockQuestion($index){
+	function createRockQuestion($theme, $index){
 		return "Rock" . " Question " . $index;
 	}
 

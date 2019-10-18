@@ -71,7 +71,7 @@ class Game
         $this->print($this->players[$this->currentPlayer] . ' is the current player');
         $this->print('They have rolled a ' . $roll);
 
-        if ($this->inPenaltyBox[$this->currentPlayer]) {
+        if ($this->isInPenalty($this->currentPlayer)) {
             if ($roll % 2 !== 0) {
                 $this->isGettingOutOfPenaltyBox = true;
 
@@ -111,9 +111,6 @@ class Game
         echo $string."\n";
     }
 
-
-
-
     /**
      * Returns the current category
      * @return string
@@ -146,7 +143,7 @@ class Game
 
     public function wasCorrectlyAnswered(): ?bool
     {
-        if ($this->inPenaltyBox[$this->currentPlayer]) {
+        if ($this->isInPenalty($this->currentPlayer)) {
             if ($this->isGettingOutOfPenaltyBox) {
                 $this->print('Answer was correct!!!!');
                 return $this->printCurrentStatus();
@@ -173,7 +170,7 @@ class Game
     {
         $this->print('Question was incorrectly answered');
         $this->print($this->players[$this->currentPlayer] . ' was sent to the penalty box');
-        $this->inPenaltyBox[$this->currentPlayer] = true;
+        $this->putInPenalty($this->currentPlayer);
 
         $this->currentPlayer++;
         if ($this->currentPlayer === count($this->players)) {
@@ -224,5 +221,18 @@ class Game
             . $this->places[$this->currentPlayer]);
         $this->print("The category is " . $this->currentCategory());
         $this->askQuestion();
+    }
+
+    /**
+     * @return mixed
+     */
+    private function isInPenalty($player): bool
+    {
+        return $this->inPenaltyBox[$player];
+    }
+
+    private function putInPenalty($player): void
+    {
+        $this->inPenaltyBox[$player] = true;
     }
 }

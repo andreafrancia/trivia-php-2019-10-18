@@ -31,9 +31,9 @@ class Game
         $this->rockQuestions = [];
 
         for ($i = 0; $i < 50; $i++) {
-			array_push($this->popQuestions, "Pop Question " . $i);
-			array_push($this->scienceQuestions, ("Science Question " . $i));
-			array_push($this->sportsQuestions, ("Sports Question " . $i));
+			array_push($this->popQuestions, $this->createQuestion("Pop", $i));
+			array_push($this->scienceQuestions, $this->createQuestion("Science", $i));
+			array_push($this->sportsQuestions, $this->createQuestion("Sports", $i));
 			array_push($this->rockQuestions, $this->createQuestion("Rock", $i));
     	}
     }

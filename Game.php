@@ -189,13 +189,15 @@ class Game {
     {
         $this->purses[$this->currentPlayer]++;
         echoln($this->players[$this->currentPlayer]
-            . " now has "
+            . ' now has '
             . $this->purses[$this->currentPlayer]
-            . " Gold Coins.");
+            . ' Gold Coins.');
 
         $winner = $this->didPlayerWin();
         $this->currentPlayer++;
-        if ($this->currentPlayer == count($this->players)) $this->currentPlayer = 0;
+        if ($this->currentPlayer === count($this->players)) {
+            $this->currentPlayer = 0;
+        }
 
         return $winner;
     }

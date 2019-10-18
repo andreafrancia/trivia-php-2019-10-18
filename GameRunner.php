@@ -6,9 +6,10 @@ $notAWinner = false;
 
 $aGame = new Game();
 
-$aGame->add("Chet");
-$aGame->add("Pat");
-$aGame->add("Sue");
+$aGame
+    ->add("Chet")
+    ->add("Pat")
+    ->add("Sue");
 
 
 do {

@@ -53,7 +53,7 @@ class Game {
 
 	    echoln($playerName . " was added");
 	    echoln("They are player number " . count($this->players));
-		return true;
+		return $this;
 	}
 
 	function howManyPlayers() {

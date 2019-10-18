@@ -82,14 +82,7 @@ class Game
 
         } else {
 
-            $this->places[$this->currentPlayer] = $this->places[$this->currentPlayer] + $roll;
-            if ($this->places[$this->currentPlayer] > 11) $this->places[$this->currentPlayer] = $this->places[$this->currentPlayer] - 12;
-
-            echoln($this->players[$this->currentPlayer]
-                . "'s new location is "
-                . $this->places[$this->currentPlayer]);
-            echoln("The category is " . $this->currentCategory());
-            $this->askQuestion();
+            $this->two($roll);
         }
 
     }
@@ -206,8 +199,18 @@ class Game
      */
     private function one($roll): void
     {
-        $this->places[$this->currentPlayer] = $this->places[$this->currentPlayer] + $roll;
-        if ($this->places[$this->currentPlayer] > 11) $this->places[$this->currentPlayer] = $this->places[$this->currentPlayer] - 12;
+        $this->two($roll);
+    }
+
+    /**
+     * @param $roll
+     */
+    private function two($roll): void
+    {
+        $this->places[$this->currentPlayer] += $roll;
+        if ($this->places[$this->currentPlayer] > 11) {
+            $this->places[$this->currentPlayer] = $this->places[$this->currentPlayer] - 12;
+        }
 
         echoln($this->players[$this->currentPlayer]
             . "'s new location is "

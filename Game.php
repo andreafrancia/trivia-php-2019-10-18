@@ -209,7 +209,7 @@ class Game
     {
         $this->places[$this->currentPlayer] += $roll;
         if ($this->places[$this->currentPlayer] > 11) {
-            $this->places[$this->currentPlayer] = $this->places[$this->currentPlayer] - 12;
+            $this->places[$this->currentPlayer] -= 12;
         }
 
         echoln($this->players[$this->currentPlayer]

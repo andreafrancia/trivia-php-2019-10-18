@@ -31,16 +31,16 @@ class Game
         $this->rockQuestions = [];
 
         for ($i = 0; $i < 50; $i++) {
-            array_push($this->popQuestions, $this->createQuestion("Pop", $i));
+            $this->popQuestions[] = $this->createQuestion("Pop", $i);
         }
         for ($i = 0; $i < 50; $i++) {
-            array_push($this->scienceQuestions, $this->createQuestion("Science", $i));
+            $this->scienceQuestions[] = $this->createQuestion("Science", $i);
         }
         for ($i = 0; $i < 50; $i++) {
-            array_push($this->sportsQuestions, $this->createQuestion("Sports", $i));
+            $this->sportsQuestions[] = $this->createQuestion("Sports", $i);
         }
         for ($i = 0; $i < 50; $i++) {
-			array_push($this->rockQuestions, $this->createQuestion("Rock", $i));
+			$this->rockQuestions[] = $this->createQuestion("Rock", $i);
     	}
     }
 

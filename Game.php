@@ -138,45 +138,25 @@ class Game {
         return $currentCategory;
 	}
 
-	function wasCorrectlyAnswered() {
-		if ($this->inPenaltyBox[$this->currentPlayer]){
-			if ($this->isGettingOutOfPenaltyBox) {
-				echoln("Answer was correct!!!!");
-			$this->purses[$this->currentPlayer]++;
-				echoln($this->players[$this->currentPlayer]
-						. " now has "
-						.$this->purses[$this->currentPlayer]
-						. " Gold Coins.");
-
-				$winner = $this->didPlayerWin();
-				$this->currentPlayer++;
-				if ($this->currentPlayer == count($this->players)) $this->currentPlayer = 0;
-
-				return $winner;
-			} else {
-				$this->currentPlayer++;
-				if ($this->currentPlayer == count($this->players)) $this->currentPlayer = 0;
-				return true;
-			}
+    public function wasCorrectlyAnswered(): ?bool
+    {
+        if ($this->inPenaltyBox[$this->currentPlayer]) {
+            if ($this->isGettingOutOfPenaltyBox) {
+                echoln('Answer was correct!!!!');
+                return $this->printCurrentStatus();
+            } else {
+                $this->currentPlayer++;
+                if ($this->currentPlayer == count($this->players)) $this->currentPlayer = 0;
+                return true;
+            }
 
 
+        } else {
 
-		} else {
-
-			echoln("Answer was corrent!!!!");
-		$this->purses[$this->currentPlayer]++;
-			echoln($this->players[$this->currentPlayer]
-					. " now has "
-					.$this->purses[$this->currentPlayer]
-					. " Gold Coins.");
-
-			$winner = $this->didPlayerWin();
-			$this->currentPlayer++;
-			if ($this->currentPlayer == count($this->players)) $this->currentPlayer = 0;
-
-			return $winner;
-		}
-	}
+            echoln("Answer was corrent!!!!");
+            return $this->printCurrentStatus();
+        }
+    }
 
     /**
      * Print the wrong answer
@@ -200,5 +180,23 @@ class Game {
     public function didPlayerWin(): bool
     {
         return !($this->purses[$this->currentPlayer] === 6);
+    }
+
+    /**
+     * @return bool
+     */
+    private function printCurrentStatus(): bool
+    {
+        $this->purses[$this->currentPlayer]++;
+        echoln($this->players[$this->currentPlayer]
+            . " now has "
+            . $this->purses[$this->currentPlayer]
+            . " Gold Coins.");
+
+        $winner = $this->didPlayerWin();
+        $this->currentPlayer++;
+        if ($this->currentPlayer == count($this->players)) $this->currentPlayer = 0;
+
+        return $winner;
     }
 }

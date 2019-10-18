@@ -18,12 +18,13 @@ class Game
     private $currentPlayer = 0;
     private $isGettingOutOfPenaltyBox;
 
-    function  __construct(){
+    public function __construct()
+    {
 
-   	    $this->players = [];
+        $this->players = [];
         $this->places = [0];
-        $this->purses  = [0];
-        $this->inPenaltyBox  = [0];
+        $this->purses = [0];
+        $this->inPenaltyBox = [0];
 
         $this->popQuestions = [];
         $this->scienceQuestions = [];
@@ -40,8 +41,8 @@ class Game
             $this->sportsQuestions[] = $this->createQuestion('Sports', $i);
         }
         for ($i = 0; $i < 50; $i++) {
-			$this->rockQuestions[] = $this->createQuestion('Rock', $i);
-    	}
+            $this->rockQuestions[] = $this->createQuestion('Rock', $i);
+        }
     }
 
 	public function createQuestion($theme, $index): string

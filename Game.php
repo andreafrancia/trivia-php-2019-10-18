@@ -44,7 +44,8 @@ class Game
     	}
     }
 
-	function createQuestion($theme, $index){
+	public function createQuestion($theme, $index): string
+    {
 		return "$theme Question $index";
 	}
 

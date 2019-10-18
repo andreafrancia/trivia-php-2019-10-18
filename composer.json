@@ -1,12 +1,16 @@
 {
-    "name": "andrea/triva-php-2019-10-19",
-    "type": "library",
-    "require-dev": {
-        "phpunit/phpunit": "^8.4"
-    },
-    "autoload": {
-        "psr-4": {
-            "\\": "src/"
-        }
+  "name": "andrea/triva-php-2019-10-19",
+  "type": "library",
+  "require-dev": {
+    "phpunit/phpunit": "^8.4"
+  },
+  "scripts": {
+    "commit": "vendor/bin/phpunit && git add --all && git commit -m \"pass\" && git push",
+    "pull": "git pull --rebase || git reset --hard origin/master"
+  },
+  "autoload": {
+    "psr-4": {
+      "\\": "src/"
     }
+  }
 }

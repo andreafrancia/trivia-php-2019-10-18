@@ -10,10 +10,9 @@
     "commit": [
       "@test",
       "git add --all",
-      "git commit -m \"pass\"",
-      "git push"
+      "git commit -m \"pass\""
       ],
-    "pull": "git pull --rebase && git push || git reset --hard origin/master"
+    "sync": "git pull --rebase && git push || git reset --hard origin/master"
   },
   "autoload": {
     "psr-4": {

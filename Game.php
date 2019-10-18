@@ -34,12 +34,12 @@ class Game
 			array_push($this->popQuestions, "Pop Question " . $i);
 			array_push($this->scienceQuestions, ("Science Question " . $i));
 			array_push($this->sportsQuestions, ("Sports Question " . $i));
-			array_push($this->rockQuestions, $this->createRockQuestion("Rock", $i));
+			array_push($this->rockQuestions, $this->createQuestion("Rock", $i));
     	}
     }
 
-	function createRockQuestion($theme, $index){
-		return "Rock" . " Question " . $index;
+	function createQuestion($theme, $index){
+		return "$theme Question $index";
 	}
 
 	function isPlayable() {

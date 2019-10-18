@@ -48,10 +48,6 @@ class Game
 		return "$theme Question $index";
 	}
 
-	function isPlayable() {
-		return ($this->howManyPlayers() >= 2);
-	}
-
 	public function add($playerName): Game
     {
 	   $this->players[] = $playerName;

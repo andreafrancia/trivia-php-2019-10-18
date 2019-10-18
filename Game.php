@@ -108,22 +108,34 @@ class Game {
 	}
 
 
-	function currentCategory() {
+    /**
+     * Returns the current category
+     * @return string
+     */
+    public function currentCategory(): string
+    {
         switch ($this->places[$this->currentPlayer]) {
             case 0:
             case 4:
             case 8:
-                return 'Pop';
+                $currentCategory = 'Pop';
+                break;
             case 1:
             case 5:
             case 9:
-                return 'Science';
+                $currentCategory = 'Science';
+                break;
+            case 2:
+            case 6:
+            case 10:
+                $currentCategory = 'Sports';
+                break;
+            default:
+                $currentCategory = 'Rock';
+                break;
         }
 
-		if ($this->places[$this->currentPlayer] == 2) return "Sports";
-		if ($this->places[$this->currentPlayer] == 6) return "Sports";
-		if ($this->places[$this->currentPlayer] == 10) return "Sports";
-		return "Rock";
+        return $currentCategory;
 	}
 
 	function wasCorrectlyAnswered() {

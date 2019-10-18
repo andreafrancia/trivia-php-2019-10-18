@@ -66,22 +66,15 @@ class Game
 
     public function roll($roll): void
     {
-        echoln($this->players[$this->currentPlayer] . " is the current player");
-        echoln("They have rolled a " . $roll);
+        echoln($this->players[$this->currentPlayer] . ' is the current player');
+        echoln('They have rolled a ' . $roll);
 
         if ($this->inPenaltyBox[$this->currentPlayer]) {
-            if ($roll % 2 != 0) {
+            if ($roll % 2 !== 0) {
                 $this->isGettingOutOfPenaltyBox = true;
 
-                echoln($this->players[$this->currentPlayer] . " is getting out of the penalty box");
-                $this->places[$this->currentPlayer] = $this->places[$this->currentPlayer] + $roll;
-                if ($this->places[$this->currentPlayer] > 11) $this->places[$this->currentPlayer] = $this->places[$this->currentPlayer] - 12;
-
-                echoln($this->players[$this->currentPlayer]
-                    . "'s new location is "
-                    . $this->places[$this->currentPlayer]);
-                echoln("The category is " . $this->currentCategory());
-                $this->askQuestion();
+                echoln($this->players[$this->currentPlayer] . ' is getting out of the penalty box');
+                $this->one($roll);
             } else {
                 echoln($this->players[$this->currentPlayer] . " is not getting out of the penalty box");
                 $this->isGettingOutOfPenaltyBox = false;
@@ -206,5 +199,20 @@ class Game
         }
 
         return $winner;
+    }
+
+    /**
+     * @param $roll
+     */
+    private function one($roll): void
+    {
+        $this->places[$this->currentPlayer] = $this->places[$this->currentPlayer] + $roll;
+        if ($this->places[$this->currentPlayer] > 11) $this->places[$this->currentPlayer] = $this->places[$this->currentPlayer] - 12;
+
+        echoln($this->players[$this->currentPlayer]
+            . "'s new location is "
+            . $this->places[$this->currentPlayer]);
+        echoln("The category is " . $this->currentCategory());
+        $this->askQuestion();
     }
 }

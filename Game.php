@@ -197,7 +197,8 @@ class Game {
     }
 
 
-	function didPlayerWin() {
-		return !($this->purses[$this->currentPlayer] == 6);
-	}
+    public function didPlayerWin(): bool
+    {
+        return !($this->purses[$this->currentPlayer] === 6);
+    }
 }

@@ -74,7 +74,7 @@ class Game
                 $this->isGettingOutOfPenaltyBox = true;
 
                 echoln($this->players[$this->currentPlayer] . ' is getting out of the penalty box');
-                $this->one($roll);
+                $this->applyRoll($roll);
             } else {
                 echoln($this->players[$this->currentPlayer] . " is not getting out of the penalty box");
                 $this->isGettingOutOfPenaltyBox = false;
@@ -82,7 +82,7 @@ class Game
 
         } else {
 
-            $this->two($roll);
+            $this->applyRoll($roll);
         }
 
     }
@@ -197,15 +197,7 @@ class Game
     /**
      * @param $roll
      */
-    private function one($roll): void
-    {
-        $this->two($roll);
-    }
-
-    /**
-     * @param $roll
-     */
-    private function two($roll): void
+    private function applyRoll($roll): void
     {
         $this->places[$this->currentPlayer] += $roll;
         if ($this->places[$this->currentPlayer] > 11) {

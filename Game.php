@@ -178,15 +178,23 @@ class Game {
 		}
 	}
 
-	function wrongAnswer(){
-		echoln("Question was incorrectly answered");
-		echoln($this->players[$this->currentPlayer] . " was sent to the penalty box");
-	$this->inPenaltyBox[$this->currentPlayer] = true;
+    /**
+     * Print the wrong answer
+     * @return bool
+     */
+    public function wrongAnswer(): bool
+    {
+        echoln('Question was incorrectly answered');
+        echoln($this->players[$this->currentPlayer] . ' was sent to the penalty box');
+        $this->inPenaltyBox[$this->currentPlayer] = true;
 
-		$this->currentPlayer++;
-		if ($this->currentPlayer == count($this->players)) $this->currentPlayer = 0;
-		return true;
-	}
+        $this->currentPlayer++;
+        if ($this->currentPlayer === count($this->players)) {
+            $this->currentPlayer = 0;
+        }
+
+        return true;
+    }
 
 
 	function didPlayerWin() {

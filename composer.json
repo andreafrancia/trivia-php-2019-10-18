@@ -6,8 +6,9 @@
     "phpunit/phpunit": "^8.4"
   },
   "scripts": {
+    "test" : "phpunit",
     "commit": [
-      "phpunit",
+      "@test",
       "git add --all",
       "git commit -m \"pass\"",
       "git push"
